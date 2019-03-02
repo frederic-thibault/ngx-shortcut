@@ -1,7 +1,7 @@
 {
 	"name": "ngx-shortcut",
 	"version": "1.0.0",
-	"description": "A very simple shortcut decorator to be more efficient",
+	"description": "A very simple shortcut decorator",
 	"author": "Frederic Thibault",
 	"repository": "",
 	"peerDependencies": {

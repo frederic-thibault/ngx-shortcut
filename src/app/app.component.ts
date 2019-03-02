@@ -16,13 +16,13 @@ export class AppComponent implements OnInit, OnDestroy {
 	}
 
 	@Shortcut({ code: 'KeyS', altKey: true, ctrlKey: false, shiftKey: false })
-	@Shortcut({ code: 'KeyT', altKey: true, ctrlKey: false, shiftKey: false })
+	@Shortcut({ code: 'KeyT', altKey: true })
 	functionTest2() {
 		console.log('Test alt+S or alt+T');
 	}
 
 	@Shortcut({ code: 'KeyU', altKey: true, ctrlKey: false, shiftKey: false, args: [1] })
-	@Shortcut({ code: 'KeyV', altKey: true, ctrlKey: false, shiftKey: false, args: [2] })
+	@Shortcut({ code: 'KeyV', altKey: true, args: [2] })
 	functionTest3(param: number) {
 		switch (param) {
 			case 1:
