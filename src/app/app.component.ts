@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Shortcut, ShortcutService } from 'projects/ngx-shortcut';
+import { Shortcut, ShortcutService } from 'ngx-shortcut';
 @Component({
 	selector: 'mat-ta-root',
 	templateUrl: './app.component.html',
