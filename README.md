@@ -18,7 +18,7 @@ Give it a try!!
 
 ## Basic setup import
 ```Typescript
-import { ShortcutModule } from  'projects/ngx-shortcut';
+import { ShortcutModule } from  'ngx-shortcut';
 
 @NgModule({
     imports: [
@@ -32,7 +32,7 @@ export  class  AppModule { }
 ## Usage
 ```Typescript
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Shortcut, ShortcutService } from 'projects/ngx-shortcut';
+import { Shortcut, ShortcutService } from 'ngx-shortcut';
 
 @Component({
     template: `<input shortcutFocus [shortcutFocusCode]="'KeyA'" [shortcutFocusAlt]="true"  [shortcutFocusCtrl]="false"  [shortcutFocusShift]="false" type="text" autofocus
