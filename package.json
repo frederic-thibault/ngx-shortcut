@@ -4,7 +4,7 @@
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve --port 4001",
-		"build-shortcut": "ng build NgxShortcut && cpx ./README.md ./dist/ngx-shortcut/",
+		"build-shortcut": "ng build NgxShortcut && cpx ./README.md ./dist/ngx-shortcut/ && cpx ./LICENSE.txt ./dist/ngx-shortcut/",
 		"test": "ng test",
 		"lint": "ng lint",
 		"e2e": "ng e2e"

@@ -7,21 +7,26 @@ import { ShortcutService, ShortcutKey } from './shortcut.service';
 	exportAs: 'shortcutFocus'
 })
 export class ShortcutFocusDirective implements OnInit, OnDestroy {
-
 	@Input() public shortcutFocus: ShortcutKey | null;
-
 	@Input() public shortcutFocusCode: string;
-
 	@Input() public shortcutFocusAlt: boolean;
-
 	@Input() public shortcutFocusCtrl: boolean;
-
 	@Input() public shortcutFocusShift: boolean;
 
 	constructor(private el: ElementRef, private shortcutService: ShortcutService) {
 	}
 
 	public ngOnInit(): void {
+		this.shortcutService.register(this.getKey(), () => {
+			this.el.nativeElement.focus();
+		});
+	}
+
+	public ngOnDestroy(): void {
+		this.shortcutService.unregister(this.getKey());
+	}
+
+	private getKey(): ShortcutKey {
 		let key = this.shortcutFocus;
 		if (!key) {
 			key = {
@@ -32,17 +37,6 @@ export class ShortcutFocusDirective implements OnInit, OnDestroy {
 			};
 		}
 
-		this.shortcutService.register(key, () => {
-			this.el.nativeElement.focus();
-		});
-	}
-
-	public ngOnDestroy(): void {
-		this.shortcutService.unregister({
-			code: this.shortcutFocusCode,
-			altKey: this.shortcutFocusAlt,
-			ctrlKey: this.shortcutFocusCtrl,
-			shiftKey: this.shortcutFocusShift,
-		});
+		return key;
 	}
 }
